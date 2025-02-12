@@ -1,0 +1,25 @@
+{
+  "name": "meu-servidor",
+  "version": "1.0.0",
+  "description": "Servidor Express para servir dados JSON",
+  "main": "index.js",
+  "type": "module",
+  "license": "AGPL-3.0",
+  "private": false,
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Nenhum teste especificado\" && exit 0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}

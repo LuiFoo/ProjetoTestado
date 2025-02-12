@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+<body>
+    <h1>Posts</h1>
+    <ul id="posts-list"></ul>
+
+    <script>
+        // Função para pegar os dados da API
+        fetch("http://localhost:3000/posts")
+            .then(response => response.json())  // Converte a resposta para JSON
+            .then(posts => {
+                const postsList = document.getElementById("posts-list");
+
+                posts.forEach(post => {
+                    const li = document.createElement("li");
+                    li.textContent = `Nome: ${post.nome}, Idade: ${post.idade}`;
+                    postsList.appendChild(li);
+                });
+            })
+            .catch(error => {
+                console.error("Erro ao carregar os posts:", error);
+            });
+    </script>
+</body>
+</html>
